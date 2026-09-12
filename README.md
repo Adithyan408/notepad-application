@@ -1,77 +1,172 @@
-# React + TypeScript + Vite
+# Advanced Notepad
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and lightweight note-taking application built with **React and TypeScript**, designed to provide an easy and clean interface for creating and managing notes.
 
-Currently, two official plugins are available:
+The project was built primarily to strengthen frontend development skills, improve UI design and component usage, and gain practical experience working with browser-based data persistence using **Local Storage**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Project Overview
 
-## React Compiler
+Advanced Notepad allows users to easily create, view, edit, and delete notes through a simple and intuitive interface.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+The application focuses on keeping the user experience clean and straightforward while providing the essential functionality required for managing personal notes.
 
-Note: This will impact Vite dev & build performances.
+All note data is stored in the browser using **Local Storage**, so the data remains available even after refreshing or reopening the application.
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* 📝 Create new notes
+* ✏️ Edit existing notes
+* 🗑️ Delete notes
+* 🔍 Search notes by title
+* 🏷️ Add and manage tags
+* 🔎 Filter notes using tags
+* 📄 Markdown support for note content
+* 💾 Persistent data using Local Storage
+* 📱 Responsive and simple user interface
+* 🔗 Client-side navigation using React Router
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Frontend
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* **React**
+* **TypeScript**
+* **React Router**
+* **React Bootstrap**
+* **React Select**
+* **React Markdown**
+* **CSS Modules**
 
+### Data Storage
+
+* **Browser Local Storage**
+
+No backend or external database is required for this project.
+
+## 🏗️ Project Structure
+
+```text
+src/
+├── components/
+│   ├── NoteList.tsx
+│   ├── NoteCard.tsx
+│   ├── NoteForm.tsx
+│   └── ...
+│
+├── App.tsx
+├── main.tsx
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application is organized around reusable React components, with TypeScript used to provide type safety throughout the application.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 💾 Data Persistence
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The application uses the browser's **Local Storage API** to persist notes.
 
+Instead of requiring a backend server or database, notes are stored directly in the user's browser.
+
+The general flow is:
+
+```text
+User creates/edits note
+        ↓
+React State
+        ↓
+Local Storage
+        ↓
+Application reload
+        ↓
+Notes restored from Local Storage
 ```
+
+This makes the project lightweight and easy to run without any backend infrastructure.
+
+## 🎨 UI Design
+
+The interface is intentionally kept **simple, clean, and easy to use**.
+
+**React Bootstrap** components are used to simplify UI development and maintain a responsive layout without having to build every UI element from scratch.
+
+The project also uses **CSS Modules** where custom styling is required.
+
+## 🎯 Purpose of the Project
+
+The main purpose of this project was to improve practical frontend development skills by building a complete application rather than focusing only on individual concepts.
+
+The project provided hands-on experience with:
+
+* React component development
+* TypeScript type definitions
+* React state management
+* React hooks
+* React Router
+* Form handling
+* Reusable components
+* UI design and responsive layouts
+* Local Storage
+* Markdown rendering
+* Filtering and searching data
+* Managing relationships between notes and tags
+
+## 📚 What I Learned
+
+While building this project, I focused on understanding not only **how** to implement a feature, but also **why** it is needed and where it should be used.
+
+This project helped me strengthen my understanding of frontend architecture, component-based development, state management, data persistence, and user interface design.
+
+It also provided practical experience in taking an idea from a basic concept to a working application.
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+Make sure you have **Node.js** installed on your system.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone <your-repository-url>
+```
+
+Navigate to the project:
+
+```bash
+cd advanced-notepad
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will be available at the local development URL provided by Vite.
+
+## 📌 Future Improvements
+
+Possible improvements for future versions include:
+
+* AI-powered writing assistance
+* Grammar and spelling suggestions
+* AI-powered summarization
+* Semantic note search
+* Richer Markdown editing
+* Cloud-based synchronization
+* User authentication
+* Backend and database integration
+* Note sharing and collaboration
+
+## 👨‍💻 Author
+
+**Adithyan**
+
+This project was built as part of my continuous learning journey in software development, with a focus on strengthening frontend development, UI design, and practical application-building skills.
